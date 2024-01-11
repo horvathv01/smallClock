@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using SmallClock.Converters;
 using SmallClock.ViewModels;
+using SmallClock.Views;
 
 namespace SmallClock
 {
@@ -16,7 +18,9 @@ namespace SmallClock
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddScoped<TimeConverter>();
             builder.Services.AddSingleton<ClockViewModel>();
+            builder.Services.AddSingleton<MainPage>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

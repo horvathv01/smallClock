@@ -10,7 +10,7 @@ using SmallClock.Models;
 
 namespace SmallClock.ViewModels
 {
-    internal partial class ClockViewModel : ObservableObject
+    public partial class ClockViewModel : ObservableObject
     {
 #region Properties
         private bool isRunning = false;
@@ -21,12 +21,13 @@ namespace SmallClock.ViewModels
         [ObservableProperty]
         public ObservableCollection<NotificationTime> notificationTimes;
 
+
 #endregion
 
 #region Constructor
         public ClockViewModel() 
         {
-            notificationTimes = new ObservableCollection<NotificationTime>();
+            NotificationTimes = new ObservableCollection<NotificationTime>();
             isRunning = true;
             Run();
         }

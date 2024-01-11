@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmallClock.Models
 {
-    internal class NotificationTime
+    public class NotificationTime
     {
         public DateTime Time { get; set; }
         public string Message { get; set; }
