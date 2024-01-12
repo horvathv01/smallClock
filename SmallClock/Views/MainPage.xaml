@@ -8,8 +8,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <views:ClockView>
+        <views:ClockView
+            Grid.Row="0">
         </views:ClockView>
+        <views:NotificationTimesListView
+            Grid.Row="1">
+        </views:NotificationTimesListView>
+        
 
     </Grid>
 </ContentPage>

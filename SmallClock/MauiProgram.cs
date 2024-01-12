@@ -19,6 +19,8 @@ namespace SmallClock
                 });
 
             builder.Services.AddScoped<TimeConverter>();
+            
+            builder.Services.AddSingleton<NotificationTimesListView>();
             builder.Services.AddSingleton<ClockViewModel>();
             builder.Services.AddSingleton<MainPage>();
 #if DEBUG
