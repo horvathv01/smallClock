@@ -16,7 +16,7 @@ namespace SmallClock.Converters
                 return time.ToString(paramString);
             } else
             {
-                return "itt valami nem teljesen az igazi";
+                return "Something went wrong";
             }
         }
 

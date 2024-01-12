@@ -4,54 +4,104 @@
              x:Class="SmallClock.Views.NotificationTimesListView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:models="clr-namespace:SmallClock.Models"
+             xmlns:converters="clr-namespace:SmallClock.Converters"
              >
+
+    <ContentView.Resources>
+        <converters:TimeConverter x:Key="timeConverter"/>
+    </ContentView.Resources>
     <VerticalStackLayout>
-        <ScrollView>
-            <toolkit:Expander x:Name="ExpanderControl">
-                <toolkit:Expander.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="60"/>
-                        </Grid.ColumnDefinitions>
-                        <Label 
+        <toolkit:Expander 
+            x:Name="ExpanderControl"
+            >
+            <toolkit:Expander.Header>
+                <Grid
+                    Padding="10"
+                    >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label 
                             Grid.Column="0"
+                            Grid.Row="0"
                             Text="Notifications"
-                            FontSize="15" />
-                        <Button 
+                            FontSize="15" 
+                            VerticalTextAlignment="Center"
+                            />
+                    <Button 
+                            x:Name="AddNotificationButton"
                             Grid.Column="1"
-                            Clicked="AddButtonClicked"
+                            Grid.Row="0"
+                            Command="{Binding OpenPopupCommand}"
+                            CommandParameter="{Binding Source={x:Reference AddNotificationButton}}"
                             Text="+"
+                            BackgroundColor="Aquamarine"
+                            VerticalOptions="Center"
+                            HeightRequest="15"
+                            WidthRequest="15"
+                            CornerRadius="7"
+                            Padding="15"
                             FontSize="25"
                             />
-                    </Grid>
-                </toolkit:Expander.Header>
-                <ListView ItemsSource="{Binding NotificationTimes}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="models:NotificationTime">
-                            <ViewCell>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="60"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label 
+                </Grid>
+            </toolkit:Expander.Header>
+            <ListView 
+                    x:Name="NotificationTimesControl"
+                    ItemsSource="{Binding NotificationTimes}"
+                    >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:NotificationTime">
+                        <ViewCell>
+                            <Grid
+                                Padding="10"
+                                >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label
                                         Grid.Column="0"
-                                        Text="This is one notification"
-                                        FontSize="18"
+                                        Grid.Row="0"
+                                        Text="{Binding Time, Converter={StaticResource timeConverter}, ConverterParameter=HH\\:mm}"
+                                        VerticalTextAlignment="Center"
+                                        FontSize="15"
                                         />
-                                    <Button 
+                                <Label 
                                         Grid.Column="1"
-                                        Clicked="RemoveButtonClicked" 
+                                        Grid.Row="0"
+                                        Text="{Binding Message}"
+                                        VerticalTextAlignment="Center"
+                                        FontSize="15"
+                                        Padding="20"
+                                        />
+                                <Button 
+                                        Grid.Column="2"
+                                        Grid.Row="0"
+                                        Command="{Binding Source={x:Reference ExpanderControl}, Path=BindingContext.RemoveNotificationTimeCommand}"
+                                        CommandParameter="{Binding }"
+                                        VerticalOptions="Center"
                                         Text="-"
+                                        BackgroundColor="Aquamarine"
+                                        HeightRequest="15"
+                                        WidthRequest="15"
+                                        Padding="15"
+                                        CornerRadius="7"
                                         FontSize="25"
                                         />
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </toolkit:Expander>
-        </ScrollView>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </toolkit:Expander>
     </VerticalStackLayout>
 </ContentView>

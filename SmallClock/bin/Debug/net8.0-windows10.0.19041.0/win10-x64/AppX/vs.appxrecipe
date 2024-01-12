@@ -29,25 +29,25 @@
     <AppXManifest Include="D:\programming\smallClock\SmallClock\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-11T15:57:06.205</Modified>
+      <Modified>2024-01-12T14:49:33.618</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\programming\smallClock\SmallClock\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-11T15:54:47.829</Modified>
+      <Modified>2024-01-12T14:49:33.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\programming\smallClock\SmallClock\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SmallClock.runtimeconfig.json">
       <PackagePath>SmallClock.runtimeconfig.json</PackagePath>
-      <Modified>2024-01-11T15:54:47.521</Modified>
+      <Modified>2024-01-12T14:30:39.759</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\programming\smallClock\SmallClock\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SmallClock.dll">
       <PackagePath>SmallClock.dll</PackagePath>
-      <Modified>2024-01-11T15:57:05.708</Modified>
+      <Modified>2024-01-12T14:49:33.135</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\programming\smallClock\SmallClock\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>SmallClock.exe</PackagePath>
-      <Modified>2024-01-11T15:57:05.714</Modified>
+      <Modified>2024-01-12T14:49:33.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\programming\smallClock\SmallClock\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -287,7 +287,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\programming\smallClock\SmallClock\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SmallClock.deps.json">
       <PackagePath>SmallClock.deps.json</PackagePath>
-      <Modified>2024-01-11T15:54:47.370</Modified>
+      <Modified>2024-01-12T14:41:46.587</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\horva\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

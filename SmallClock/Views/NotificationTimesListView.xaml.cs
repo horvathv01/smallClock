@@ -1,4 +1,10 @@
 using CommunityToolkit.Maui.Views;
+using Microsoft.UI;
+using SmallClock.Models;
+using SmallClock.ViewModels;
+using Microsoft.UI.Windowing;
+using Windows.Graphics;
+
 
 namespace SmallClock.Views;
 
@@ -9,13 +15,4 @@ public partial class NotificationTimesListView : ContentView
 		InitializeComponent();
 	}
 
-    private void AddButtonClicked(object sender, EventArgs e)
-    {
-
-    }
-
-	private void RemoveButtonClicked(object sender, EventArgs e)
-	{
-
-	}
 }

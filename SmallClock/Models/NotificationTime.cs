@@ -23,6 +23,13 @@ namespace SmallClock.Models
                 && Message.Equals(other.Message);
         }
 
+        public bool TimeMatches(DateTime time)
+        {
+            return time.Hour.Equals(Time.Hour)
+                && time.Minute.Equals(Time.Minute)
+                && time.Second.Equals(Time.Second);
+        }
+
         public override int GetHashCode()
         {
             throw new NotImplementedException();

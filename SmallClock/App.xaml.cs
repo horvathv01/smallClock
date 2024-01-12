@@ -17,7 +17,7 @@ namespace SmallClock
             Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
             {
                 const int WindowWidth = 350;
-                const int WindowHeight = 150;
+                const int WindowHeight = 200;
 
                 var mauiWindow = handler.VirtualView;
                 var nativeWindow = handler.PlatformView;

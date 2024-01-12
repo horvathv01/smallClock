@@ -57,3 +57,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SmallClock.Views.NotificationTimesListView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\NotificationTimesListView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\NotificationTimesListView.xaml
+
+[D:/programming/smallClock/SmallClock/Views/Popups/InputNotificationTimeView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SmallClock.Views.Popups.InputNotificationTimeView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Popups\InputNotificationTimeView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Popups\InputNotificationTimeView.xaml

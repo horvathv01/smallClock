@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmallClock")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+74fb6fd9f5ade9a894e0619e2edeece78f1beec1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e38b39669d1266a8b93db5367e3d4d8a8a089c63")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmallClock")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmallClock")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
