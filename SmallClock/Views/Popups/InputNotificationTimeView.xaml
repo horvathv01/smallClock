@@ -28,7 +28,6 @@
             BackgroundColor="DarkGray"
             TextColor="Aquamarine"
             VerticalOptions="End"
-            CornerRadius="20"
             Padding="20"
             Clicked="CloseButtonClicked"
             />
@@ -43,7 +42,7 @@
         <TimePicker 
             Grid.Row="2"
             Grid.Column="0"
-            PropertyChanged="TimeChanged"
+            x:Name="TimePickerControl"
             BackgroundColor="DarkBlue"
             TextColor="White"
             />
@@ -58,10 +57,10 @@
         <Entry 
             Grid.Row="4"
             Grid.Column="0"
+            x:Name="MessageControl"
             FontSize="15"
             BackgroundColor="DarkGray"
             TextColor="White"
-            TextChanged="NotificationMessageChanged"
             />
         <Button 
             Grid.Row="6"
@@ -71,9 +70,20 @@
             BackgroundColor="DarkGray"
             TextColor="Aquamarine"
             VerticalOptions="Center"
-            CornerRadius="20"
             Padding="20"
             Clicked="SaveButtonClicked"
+            />
+
+        <Button 
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="Try"
+            FontSize="15"
+            BackgroundColor="DarkGray"
+            TextColor="Aquamarine"
+            VerticalOptions="Center"
+            Padding="20"
+            Clicked="Try"
             />
 
     </Grid>

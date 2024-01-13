@@ -25,7 +25,10 @@ namespace SmallClock.Models
 
         public bool TimeMatches(DateTime time)
         {
-            return time.Hour.Equals(Time.Hour)
+            return time.Year.Equals(Time.Year)
+                && time.Month.Equals(Time.Month)
+                && time.Day.Equals(Time.Day)
+                && time.Hour.Equals(Time.Hour)
                 && time.Minute.Equals(Time.Minute)
                 && time.Second.Equals(Time.Second);
         }

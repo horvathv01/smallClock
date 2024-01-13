@@ -42,7 +42,7 @@ namespace SmallClock.ViewModels
             _timeConverter = timeConverter;
             _popupService = popupService;
             Run();
-            Prepopulate();
+            //Prepopulate();
         }
 
 #endregion

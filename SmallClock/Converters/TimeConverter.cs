@@ -16,13 +16,26 @@ namespace SmallClock.Converters
                 return time.ToString(paramString);
             } else
             {
-                return "Something went wrong";
+                throw new NotImplementedException();
             }
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if(value is TimeSpan time && targetType == typeof(DateTime))
+            {
+                var now = DateTime.Now;
+                return new DateTime(
+                    now.Year, 
+                    now.Month, 
+                    time.Hours == 0 && time.Minutes == 0 ? now.Day + 1 : now.Day, //sets notification for next day
+                    time.Hours, 
+                    time.Minutes, 
+                    0);
+            } else
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
