@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Core.Extensions;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using SmallClock.Models;
 using SmallClock.Services;
-using Windows.UI.Notifications;
 
 namespace SmallClock.ViewModels
 {
@@ -110,9 +110,13 @@ namespace SmallClock.ViewModels
                 {
                     var convertedTime = _timeConverter.Convert(notification.Time, typeof(string), "HH\\:mm", CultureInfo.CurrentCulture);
                     Alert($"Notification for {convertedTime} already exists.");
+                    return;
                 }
             }
             NotificationTimes.Add(time);
+            NotificationTimes = NotificationTimes.Select(time => time)
+                                                  .OrderBy(time => time.Time)
+                                                  .ToObservableCollection();
         }
 
         [RelayCommand]
@@ -143,9 +147,13 @@ namespace SmallClock.ViewModels
                 AddNotificationTime(notification);
             }
 
-            var newTime = new DateTime(2024, 01, 12, 14, 26, 0);
+            var newTime = new DateTime(2024, 01, 12, 11, 26, 0);
             var newNotification = new NotificationTime(newTime, "ALERT!");
             AddNotificationTime(newNotification);
+
+            var invalidTime = new DateTime(2024, 01, 12, 11, 26, 0);
+            var invalidNotification = new NotificationTime(invalidTime, "Invalid one");
+            AddNotificationTime(invalidNotification);
         }
 
 #endregion

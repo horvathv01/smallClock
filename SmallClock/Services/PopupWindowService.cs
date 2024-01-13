@@ -13,7 +13,7 @@ namespace SmallClock.Services
     {
         public async Task DisplayAlert(string title, string message, string cancel)
         {
-            await Application.Current?.MainPage?.DisplayAlert(title, message, "Ok");
+            await Application.Current.MainPage.DisplayAlert(title, message, "Ok");
         }
 
         public async Task<bool> DisplayChoice(string title, string message, string affirmative, string negative)
