@@ -14,6 +14,6 @@ namespace SmallClock.Services
 
         Task<bool> DisplayChoice(string title, string message, string affirmative, string negative);
 
-        Task DisplayInputView( ClockViewModel viewModel );
+        Task DisplayInputView(IValueConverter timeConverter, ClockViewModel viewModel );
     }
 }

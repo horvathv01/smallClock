@@ -21,9 +21,9 @@ namespace SmallClock.Services
             return await Application.Current.MainPage.DisplayAlert(title, message, affirmative, negative);
         }
 
-        public async Task DisplayInputView(ClockViewModel viewModel)
+        public async Task DisplayInputView(IValueConverter timeConverter, ClockViewModel viewModel)
         {
-            var popup = new InputNotificationTimeView(viewModel);
+            var popup = new InputNotificationTimeView(timeConverter, viewModel);
             Application.Current.MainPage.ShowPopup(popup);
         }
     }

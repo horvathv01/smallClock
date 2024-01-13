@@ -4,10 +4,77 @@
              x:Class="SmallClock.Views.Popups.InputNotificationTimeView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              >
-    <VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Button 
+            x:Name="CloseButton"
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="X"
+            FontSize="15"
+            BackgroundColor="DarkGray"
+            TextColor="Aquamarine"
+            VerticalOptions="End"
+            CornerRadius="20"
+            Padding="20"
+            Clicked="CloseButtonClicked"
+            />
         <Label 
-            Text="THIS IS THE INPUT"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Time of notification:"
+            FontSize="15"
+            VerticalTextAlignment="End"
+            HorizontalTextAlignment="Start"
+            />
+        <TimePicker 
+            Grid.Row="2"
+            Grid.Column="0"
+            PropertyChanged="TimeChanged"
+            BackgroundColor="DarkBlue"
+            TextColor="White"
+            />
+        <Label 
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Notification message:"
+            FontSize="15"
+            VerticalTextAlignment="End"
+            HorizontalTextAlignment="Start"            
+            />
+        <Entry 
+            Grid.Row="4"
+            Grid.Column="0"
+            FontSize="15"
+            BackgroundColor="DarkGray"
+            TextColor="White"
+            TextChanged="NotificationMessageChanged"
+            />
+        <Button 
+            Grid.Row="6"
+            Grid.Column="1"
+            Text="Save"
+            FontSize="15"
+            BackgroundColor="DarkGray"
+            TextColor="Aquamarine"
+            VerticalOptions="Center"
+            CornerRadius="20"
+            Padding="20"
+            Clicked="SaveButtonClicked"
+            />
+
+    </Grid>
 </toolkit:Popup>

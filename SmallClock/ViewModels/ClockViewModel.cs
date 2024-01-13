@@ -97,7 +97,7 @@ namespace SmallClock.ViewModels
         {
             if(element is Button button && button.StyleId == "AddNotificationButton")
             {
-                _popupService.DisplayInputView(this);
+                _popupService.DisplayInputView(_timeConverter, this);
             }
         }
 
