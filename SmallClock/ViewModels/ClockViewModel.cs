@@ -101,7 +101,7 @@ namespace SmallClock.ViewModels
             }
         }
 
-        public void AddNotificationTime(NotificationTime time)
+        public async void AddNotificationTime(NotificationTime time)
         {
             //check for same time: not allowed    
             foreach (var notification in NotificationTimes)
@@ -113,6 +113,13 @@ namespace SmallClock.ViewModels
                     return;
                 }
             }
+            var now = DateTime.Now;
+            if(time.Time < now)
+            {
+                var choice = await _popupService.DisplayChoice("Warning!", "The time of this notification is in the past. Are you sure?", "Yes", "Cancel");
+                if(!choice) { return; }
+            }
+
             NotificationTimes.Add(time);
             NotificationTimes = NotificationTimes.Select(time => time)
                                                   .OrderBy(time => time.Time)
