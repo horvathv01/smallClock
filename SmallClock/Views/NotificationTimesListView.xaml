@@ -10,9 +10,15 @@
     <ContentView.Resources>
         <converters:TimeConverter x:Key="timeConverter"/>
     </ContentView.Resources>
+    <ScrollView
+        x:Name="ScrollControl"
+        
+        >
     <VerticalStackLayout>
         <toolkit:Expander 
             x:Name="ExpanderControl"
+            IsExpanded="True"
+            ExpandedChanged="ExpanderControl_ExpandedChanged"
             >
             <toolkit:Expander.Header>
                 <Grid
@@ -44,8 +50,7 @@
                             HeightRequest="15"
                             WidthRequest="15"
                             CornerRadius="7"
-                            Padding="15"
-                            FontSize="25"
+                            FontSize="20"
                             />
                 </Grid>
             </toolkit:Expander.Header>
@@ -81,7 +86,7 @@
                                         Text="{Binding Message}"
                                         VerticalTextAlignment="Center"
                                         FontSize="15"
-                                        Padding="20"
+                                        Padding="10"
                                         />
                                 <Button 
                                         Grid.Column="2"
@@ -93,9 +98,8 @@
                                         BackgroundColor="Aquamarine"
                                         HeightRequest="15"
                                         WidthRequest="15"
-                                        Padding="15"
                                         CornerRadius="7"
-                                        FontSize="25"
+                                        FontSize="20"
                                         />
                             </Grid>
                         </ViewCell>
@@ -104,4 +108,5 @@
             </ListView>
         </toolkit:Expander>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentView>

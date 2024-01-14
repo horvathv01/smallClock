@@ -4,10 +4,12 @@
              x:Class="SmallClock.Views.Popups.InputNotificationTimeView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              >
-    <Grid>
+    <Grid
+        Padding="10"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        >
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -16,75 +18,64 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button 
-            x:Name="CloseButton"
-            Grid.Row="0"
-            Grid.Column="2"
-            Text="X"
-            FontSize="15"
-            BackgroundColor="DarkGray"
-            TextColor="Aquamarine"
-            VerticalOptions="End"
-            Padding="20"
-            Clicked="CloseButtonClicked"
-            />
         <Label 
-            Grid.Row="1"
+            Grid.Row="0"
             Grid.Column="0"
             Text="Time of notification:"
-            FontSize="15"
-            VerticalTextAlignment="End"
+            FontSize="13"
+            VerticalTextAlignment="Center"
             HorizontalTextAlignment="Start"
             />
         <TimePicker 
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="0"
             x:Name="TimePickerControl"
             BackgroundColor="DarkBlue"
             TextColor="White"
             />
         <Label 
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="0"
             Text="Notification message:"
-            FontSize="15"
-            VerticalTextAlignment="End"
+            FontSize="13"
+            VerticalTextAlignment="Center"
             HorizontalTextAlignment="Start"            
             />
         <Entry 
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="0"
             x:Name="MessageControl"
-            FontSize="15"
+            FontSize="13"
             BackgroundColor="DarkGray"
             TextColor="White"
+            Completed="SaveButtonClicked"
             />
         <Button 
-            Grid.Row="6"
-            Grid.Column="1"
-            Text="Save"
-            FontSize="15"
-            BackgroundColor="DarkGray"
-            TextColor="Aquamarine"
-            VerticalOptions="Center"
-            Padding="20"
-            Clicked="SaveButtonClicked"
-            />
-
-        <Button 
-            Grid.Row="6"
+            x:Name="CloseButton"
+            Grid.Row="4"
             Grid.Column="0"
-            Text="Try"
-            FontSize="15"
+            Text="Cancel"
+            FontSize="13"
+            BackgroundColor="DarkGray"
+            TextColor="Red"
+            VerticalOptions="End"
+            WidthRequest="80"
+            Clicked="CloseButtonClicked"
+            HorizontalOptions="Start"
+            />
+        <Button 
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Save"
+            FontSize="13"
             BackgroundColor="DarkGray"
             TextColor="Aquamarine"
             VerticalOptions="Center"
-            Padding="20"
-            Clicked="Try"
+            WidthRequest="80"
+            Clicked="SaveButtonClicked"
+            HorizontalOptions="End"
             />
-
     </Grid>
 </toolkit:Popup>

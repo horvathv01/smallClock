@@ -15,4 +15,11 @@ public partial class NotificationTimesListView : ContentView
 		InitializeComponent();
 	}
 
+    private void ExpanderControl_ExpandedChanged(object sender, CommunityToolkit.Maui.Core.ExpandedChangedEventArgs e)
+    {
+		if (!ExpanderControl.IsExpanded)
+		{
+			ExpanderControl.IsExpanded = true;
+		}
+    }
 }

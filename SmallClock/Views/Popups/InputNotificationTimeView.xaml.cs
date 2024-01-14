@@ -45,12 +45,4 @@ public partial class InputNotificationTimeView : Popup
             throw new Exception("BindingContext of InputNotificationTimeView was changed from ClockViewModel to something else.");
         }
     }
-
-    private void Try(object sender, EventArgs e)
-    {
-        if(TimePickerControl != null)
-        {
-
-        }
-    }
 }
