@@ -343,3 +343,4 @@ C:\DevOps\Private\smallClock\SmallClock\obj\Debug\net8.0-maccatalyst\maccatalyst
 C:\DevOps\Private\smallClock\SmallClock\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\SmallClock.pdb
 C:\DevOps\Private\smallClock\SmallClock\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\SmallClock.genruntimeconfig.cache
 C:\DevOps\Private\smallClock\SmallClock\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ref\SmallClock.dll
+C:\DevOps\Private\smallClock\SmallClock\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Plugin.Maui.Audio.dll

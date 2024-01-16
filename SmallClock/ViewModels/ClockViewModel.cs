@@ -44,7 +44,7 @@ namespace SmallClock.ViewModels
             _popupService = popupService;
             _audioPlayer = audioPlayer;
             Run();
-            Prepopulate();
+            //Prepopulate();
         }
 
 #endregion
@@ -168,10 +168,10 @@ namespace SmallClock.ViewModels
             AddNotificationTime(invalidNotification);
             */
 
-            var now = DateTime.Now;
-            var time = new DateTime( now.Year, now.Month, now.Day, now.Hour, now.Minute + 1, 0 );
-            var notification = new NotificationTime(time, "Trial notification");
-            AddNotificationTime( notification );
+            //var now = DateTime.Now;
+            //var time = new DateTime( now.Year, now.Month, now.Day, now.Hour, now.Minute + 1, 0 );
+            //var notification = new NotificationTime(time, "Trial notification");
+            //AddNotificationTime( notification );
         }
 
 #endregion
