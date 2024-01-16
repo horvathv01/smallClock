@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Core;
 using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 using SmallClock.Converters;
 using SmallClock.Services;
 using SmallClock.ViewModels;
@@ -25,6 +26,9 @@ namespace SmallClock
 
             builder.Services.AddSingleton<IValueConverter, TimeConverter>();
             builder.Services.AddScoped<IPopupWindowService, PopupWindowService>();
+            builder.Services.AddSingleton<Services.IAudioPlayer, Services.AudioPlayer>();
+
+            builder.Services.AddSingleton(AudioManager.Current);
 
             builder.Services.AddSingleton<NotificationTimesListView>();
             builder.Services.AddSingleton<ClockViewModel>();

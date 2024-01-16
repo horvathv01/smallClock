@@ -29,20 +29,22 @@ namespace SmallClock.ViewModels
 
         private IValueConverter _timeConverter;
         private IPopupWindowService _popupService;
+        private IAudioPlayer _audioPlayer;
 
 
 
 #endregion
 
 #region Constructor
-        public ClockViewModel(IValueConverter timeConverter, IPopupWindowService popupService) 
+        public ClockViewModel(IValueConverter timeConverter, IPopupWindowService popupService, IAudioPlayer audioPlayer) 
         {
             NotificationTimes = new ObservableCollection<NotificationTime>();
             isRunning = true;
             _timeConverter = timeConverter;
             _popupService = popupService;
+            _audioPlayer = audioPlayer;
             Run();
-            //Prepopulate();
+            Prepopulate();
         }
 
 #endregion
@@ -83,11 +85,13 @@ namespace SmallClock.ViewModels
         {
             if(obj is NotificationTime time)
             {
-            string convertedTime = _timeConverter.Convert(time.Time, typeof(string), "HH\\:mm", CultureInfo.CurrentCulture).ToString();
-            _popupService.DisplayAlert(convertedTime, time.Message, "OK");
+                string convertedTime = _timeConverter.Convert(time.Time, typeof(string), "HH\\:mm", CultureInfo.CurrentCulture).ToString();
+                _audioPlayer.PlayNotification();
+                _popupService.DisplayAlert( convertedTime, time.Message, "OK" );
             } 
             else if (obj is string message)
             {
+                _audioPlayer.PlayAlert();
                 _popupService.DisplayAlert("Alert!", message, "OK");
             }
         }
@@ -147,6 +151,7 @@ namespace SmallClock.ViewModels
 
         private void Prepopulate()
         {
+            /*
             for(int i = 0; i < 5; i++)
             {
                 var time = new DateTime(2024, 01, 12, 10, i, 0);
@@ -161,6 +166,12 @@ namespace SmallClock.ViewModels
             var invalidTime = new DateTime(2024, 01, 12, 11, 26, 0);
             var invalidNotification = new NotificationTime(invalidTime, "Invalid one");
             AddNotificationTime(invalidNotification);
+            */
+
+            var now = DateTime.Now;
+            var time = new DateTime( now.Year, now.Month, now.Day, now.Hour, now.Minute + 1, 0 );
+            var notification = new NotificationTime(time, "Trial notification");
+            AddNotificationTime( notification );
         }
 
 #endregion
