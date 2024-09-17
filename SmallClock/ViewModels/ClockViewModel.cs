@@ -145,7 +145,7 @@ namespace SmallClock.ViewModels
                 notificationTimes = times.Length;
             }
 
-            for(var i = 1; i < notificationTimes; i++ )
+            for(var i = 1; i <= notificationTimes; i++ )
             {
                 var now = DateTime.Now;
                 var subtracted = time.Time.AddMinutes( times[i - 1] * -1 );
