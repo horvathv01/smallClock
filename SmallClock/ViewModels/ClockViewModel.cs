@@ -130,6 +130,33 @@ namespace SmallClock.ViewModels
                                                   .ToObservableCollection();
         }
 
+        public async void AddDecrementingNotificationTimes(NotificationTime time, int notificationTimes = 4)
+        {
+            if(notificationTimes < 0 )
+            {
+                return;
+            }
+
+            int[] times = [5, 10, 15, 30, 45, 60, 90, 120, 180];
+            AddNotificationTime(time);
+
+            if(notificationTimes > times.Length)
+            {
+                notificationTimes = times.Length;
+            }
+
+            for(var i = 1; i <= notificationTimes; i++ )
+            {
+                var now = DateTime.Now;
+                var subtracted = time.Time.AddMinutes( times[i - 1] * -1 );
+                if(subtracted > now )
+                {
+                    var newTime = new NotificationTime(subtracted, time.Message);
+                    AddNotificationTime( newTime );
+                }
+            }
+        }
+
         [RelayCommand]
         public void RemoveNotificationTime(object element)
         {
