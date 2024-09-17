@@ -34,6 +34,7 @@
             x:Name="TimePickerControl"
             BackgroundColor="DarkBlue"
             TextColor="White"
+            Format="HH:mm"
             />
         <Label 
             Grid.Row="2"
@@ -52,30 +53,68 @@
             TextColor="White"
             Completed="SaveButtonClicked"
             />
-        <Button 
-            x:Name="CloseButton"
-            Grid.Row="4"
-            Grid.Column="0"
-            Text="Cancel"
-            FontSize="13"
+        <HorizontalStackLayout
+            x:Name="ButtonsRow"
+            Grid.Row="4">
+            <Frame
+                x:Name="CloseButtonFrame"
+                BackgroundColor="DarkGray"
+                CornerRadius="5"
+                VerticalOptions="Center"
+                WidthRequest="80"
+                BorderColor="Transparent"
+                Padding="5">
+                <Label
+                    Text="Cancel"
+                    FontSize="13"
+                    TextColor="Red"
+                    HorizontalTextAlignment="Center"                    
+                    VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="CloseButtonClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            
+            <Frame
+                x:Name="SaveButtonFrame"
+                BackgroundColor="DarkGray"
+                CornerRadius="5"
+                VerticalOptions="Center"
+                WidthRequest="80"
+                BorderColor="Transparent"
+                Padding="5">
+                <Label
+                    Text="Save"
+                    FontSize="13"
+                    TextColor="Aquamarine"
+                    HorizontalTextAlignment="Center"                    
+                    VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="SaveButtonClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame 
+            x:Name="RegularNotificationsFrame"
             BackgroundColor="DarkGray"
-            TextColor="Red"
-            VerticalOptions="End"
-            WidthRequest="80"
-            Clicked="CloseButtonClicked"
-            HorizontalOptions="Start"
-            />
-        <Button 
-            Grid.Row="4"
-            Grid.Column="0"
-            Text="Save"
-            FontSize="13"
-            BackgroundColor="DarkGray"
-            TextColor="Aquamarine"
+            CornerRadius="5"
             VerticalOptions="Center"
             WidthRequest="80"
-            Clicked="SaveButtonClicked"
-            HorizontalOptions="End"
-            />
+            BorderColor="Transparent"
+            Padding="5">
+                <Label 
+                Text="Notify me"
+                FontSize="13"
+                TextColor="Aqua"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="AddRegularNotificationsClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </HorizontalStackLayout>
     </Grid>
 </toolkit:Popup>
