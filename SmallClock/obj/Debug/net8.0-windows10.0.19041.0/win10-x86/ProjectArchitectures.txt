@@ -1,1 +1,0 @@
-C:\DevOps\Private\smallClock\SmallClock\SmallClock.csproj;x86
