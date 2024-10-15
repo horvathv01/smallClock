@@ -120,8 +120,10 @@ namespace SmallClock.ViewModels
             var now = DateTime.Now;
             if(time.Time < now)
             {
-                var choice = await _popupService.DisplayChoice("Warning!", "The time of this notification is in the past. Are you sure?", "Yes", "Cancel");
-                if(!choice) { return; }
+                time.Time = time.Time.AddDays( 1 );
+                time.Message += ($" {time.Time.ToString( "MMMM" )} {time.Time.ToString("dd")}");
+                //var choice = await _popupService.DisplayChoice("Warning!", "The time of this notification is in the past. Are you sure?", "Yes", "Cancel");
+                //if(!choice) { return; }
             }
 
             NotificationTimes.Add(time);
@@ -151,7 +153,7 @@ namespace SmallClock.ViewModels
                 var subtracted = time.Time.AddMinutes( times[i - 1] * -1 );
                 if(subtracted > now )
                 {
-                    var newTime = new NotificationTime(subtracted, time.Message);
+                    var newTime = new NotificationTime(subtracted, time.Message + " " + time.Time.ToString("HH:mm"));
                     AddNotificationTime( newTime );
                 }
             }
